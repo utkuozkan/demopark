@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row">
+
+    <div class="col-md-2">
+    </div>
+
+    <div class="col-md-8">
+        @model IEnumerable<WebApp.Models.WordModel>
+        <h2>En çok geçen 10 kelime</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th>Kelime</th>
+                <th>Sayı</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.word)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.count)
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+    <div class="col-md-2"></div>
+
+</div>
+
+
